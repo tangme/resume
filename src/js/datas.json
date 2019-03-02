@@ -1,0 +1,119 @@
+[
+	{
+		"projectName":"网络流量监控系统",
+		"technologyStack":["Vue 2.x","Qunee","Element","SVN"],
+		"projectLiftTime":["至今","2018"],
+		"dutyAndAchieve":[
+			"担任项目组前端组长，进行代码审核与重构",
+			"集成Qunee Editor至项目环境，基于拖拽交互实现可视化数据持久化",
+			"集成Gis(类似 Cesium三维地球库)至项目环境,实现类Echart数据迁徙的航线图"
+		],
+		"todos":[
+			"编码含有折线图、饼图、柱状图、中国地图的Echarts首页",
+			"重构设备管理(PC、交换机、服务器、路由器、探针)业务模块，使维护表单同时支持传统的表格调用与Qunee画布拖拽调用"
+		],
+		"projectImages":[],
+		"onlineUrl":[]
+	},
+	{
+		"projectName":"某所化学试剂管理系统",
+		"technologyStack":["Vue 2.x","JavaScript ES6","Element","SVN"],
+		"projectLiftTime":["至今","2018"],
+		"dutyAndAchieve":[
+			"独立完成项目PC端、触屏端界面构建，以及各类交互设计与实现（如：扫码枪获取二维码数据）",
+			"编写支持上标、下标输入的文本框组件（FF，webkit available）",
+			"二度封装 Autocomplete 组件，使其文本框及建议下拉框支持上下标等富文本标签"
+		],
+		"todos":[
+			"制作提供给触屏端使用的虚拟键盘，方便快速检索数据内容",
+			"根据设计ECharts的大小，动态计算每页展示图表数目的轮播图"
+		],
+		"projectImages":[],
+		"onlineUrl":[]
+	},
+	{
+		"projectName":"无车承运系统",
+		"technologyStack":["Vue 2.x","JavaScript ES6","iView","Git"],
+		"projectLiftTime":["2018","01~09"],
+		"dutyAndAchieve":[
+			"独立完成产品前端界面的构建，以及各类交互设计与实现",
+			"负责菜单权限的设计与开发，实现菜单数据根据登陆角色不同而动态获取并配置路由，通过将数据保存至sessionStorage解决刷新后，因VUE重新实例话而丢失菜单的情况；",
+			"物流运单上报业务模块：在人员录单、客服审核、财务审核、运营(资金、运单)上报四个环节上，进行业务操作整合，显著提高操作效率，加强信息校验，规避人为误操作",
+			"引入VUX移动UI框架，快速搭建WebApp，方便市场人员查看统计信息"
+		],
+		"todos":[
+			"备份VUEX核心数据至sessionStorage，并解决刷新页面VUEX数据丢失问题",
+			"设计编写菜单权限，根据服务端传回的数据，动态配置路由地址与菜单显示",
+			"二度封装iView的Menu组件，使其支持无限层级的菜单",
+			"封装图片上传组件，使其支持上传进度，展示图片大图，重置功能"
+		],
+		"projectImages":[],
+		"onlineUrl":[]
+	},
+	{
+		"projectName":"中国大唐贵州网站项目整合",
+		"technologyStack":["ExtJs 4.2.3","JavaScript ES5","Bootstrap","Java7 (SSH)","ORACLE","SVN"],
+		"projectLiftTime":["2017","2017-09"],
+		"dutyAndAchieve":[
+			"担任项目经理，在项目前期 通过即时与上级反馈和调整项目人员任务与进度，顺利解决数次客户临时要求的项目演示。",
+			"项目期间：负责编写 展示面板基类及其接口，解决各代办信息、图形统计等展示需求；通过引用开源拖拽控件，并在其基础上扩展属性方法 完成拖拽排序保存功能；使用轮询技术方案，完成各类信息的定时更新；重写页面跳转逻辑，加快动静态页面访问速度。"
+		],
+		"todos":[
+			"完成需求调研、分析，任务布置，文档编写，项目演示等职责",
+			"编写 (图形统计、消息通知代办) 展示面板基类及接口等事项",
+			"扩展插件的属性与方法，实现面板可拖拽、排序保存功能",
+			"设计与编码页面主题切换功能，给用户提供在后台选择页面主题风格",
+			"使用Gulp完成前端代码的校验、文件合并压缩等自动化作业",
+			"分析旧站数据结构，编写迁移代码，更新至新版数据库 ( ORACLE TO ORACLE )"
+		],
+		"projectImages":[],
+		"onlineUrl":[]
+	},
+	{
+		"projectName":"中国大唐集团网站外网 || 后台2.0",
+		"technologyStack":["ExtJs 4.2.3","JavaScript ES5","CSS3","Bootstrap","Java1.5 (SSH) || java7","ORACLE","SVN"],
+		"projectLiftTime":["2016","2014 (1.0) 2016 (2.0)"],
+		"dutyAndAchieve":[
+			"使用开源uEditor编辑器，解决其本身个别BUG（IE8兼容、路径错误等问题）,最终让在线编辑器此类功能 短平快的消化与上线，并在其它网站中升级复用。",
+			"设计编写 页面配置模版，实现导航菜单、页面背景、列表样式、底部信息等组件，供用户自行设置，显著降低了网站的维护成本。",
+			"重新设计与编写静态页面目录生成规则，解决服务器因单个目录里文件数量过多，而导致的响应缓慢问题。",
+			"参与设计与制定 网页专题、投票模块的功能和排版，协同制定开发标准，使其后类似功能得以流程化、复用性强。",
+			"完善特殊字符过滤规则，有效防范XSS攻击，SQL注入。"
+		],
+		"todos":[
+			"编写页面配置模版，实现页面常用组件 可视化配置操作；大幅提高页面制作效率",
+			"采用BootStrap，解决页面同时适配桌面端、移动端响应的需求",
+			"封装常用 JavaScript工具方法 至 JS对象 或 jQuery插件",
+			"引入uEditor编辑器，解决在线富文本稿件的编辑需求",
+			"使用Grunt完成前端代码的校验、文件合并压缩等自动化作业",
+			"分析旧站数据结构，编写迁移代码，更新至新版数据库 ( XML TO ORACLE )"
+		],
+		"projectImages":["http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/za*CLwNhkZgG3Cs9Gj75XuJnN*w*HMvSZNeYPvy73qI!/r/dDEBAAAAAAAA"],
+		"onlineUrl":["http://www.china-cdt.com/"]
+	},
+	{
+		"projectName":"大唐湖南分公司岗位培训达标管理信息系统",
+		"technologyStack":["ExtJs 4.2.1","Delphi","Java7","ORACLE","SVN"],
+		"projectLiftTime":["2015","02～09"],
+		"dutyAndAchieve":[],
+		"todos":[
+			"编码阅卷模块：实现上锁、随机抽取试卷、单选、多选、判断的自动阅卷、多人同时审阅不记名试卷的需求",
+			"考生答题记录：通过实时写入答题记录至cookie，完成考生答题记录的快速读写"
+		],
+		"projectImages":[],
+		"onlineUrl":[]
+	},
+	{
+		"projectName":"广东粤电先进发电企业考核管理系统1.0 || 2.0",
+		"technologyStack":["ExtJs 4.2.1","oxhide","Java1.5 || java7","ORACLE","SVN"],
+		"projectLiftTime":["2012","2012 (1.0) 2015 (2.0)"],
+		"dutyAndAchieve":[],
+		"todos":[
+			"编码 权限分配模块：通过扩展控件的属性与方式，实现了多选下拉选择框 去重、校验功能",
+			"与甲方门户系统厂商沟通，编写并提供本系统相关数据的取数接口(XML形式)",
+			"扩展Extjs合并单元格功能，解决本系统 各查询统计业务模块的显示难题"
+		],
+		"projectImages":[],
+		"onlineUrl":[]
+	}
+]

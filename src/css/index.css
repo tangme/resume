@@ -8,6 +8,10 @@ body {
     background: #333;
 }
 
+.marginRight5{
+    margin-right: 5px;
+}
+
 .self-info-p {
     width: 90%;
     background-color: #eee;
@@ -199,9 +203,19 @@ body {
 }
 
 .main {
+    position: relative;
     margin-top: 100px;
 }
 
+.main:before{
+    content: '项目经验';
+    position: absolute;
+    left: 0;
+    top:-1.5rem;
+    color: #1a99de;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 
 .bs-callout {
     padding: 20px;
