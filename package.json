@@ -1,0 +1,32 @@
+{
+  "name": "tangme.github.io",
+  "version": "1.0.0",
+  "description": "tanglv's brief info.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tangme/tangme.github.io.git"
+  },
+  "keywords": [
+    "tanglv"
+  ],
+  "author": "tanglv",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tangme/tangme.github.io/issues"
+  },
+  "homepage": "https://github.com/tangme/tangme.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.8.0",
+    "gulp-csslint": "^1.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1"
+  }
+}

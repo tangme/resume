@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>唐小律</title>
+    <link rel="Shortcut Icon" href="./images/favicon.ico">
+    <script src="https://cdn.bootcss.com/device.js/0.2.7/device.min.js"></script>
+    <!--[if lte IE 9]>
+        <script type="text/javascript">
+        var OLD_IE = true;
+        </script>
+    <![endif]-->
+    <script type="text/javascript">
+    (function(window) {
+        if (!device.desktop()) {
+            window.location.href = "mobileIndex.html";
+        }
+
+        function Tools() {
+            this.isOldIE = (typeof window.OLD_IE !== 'undefined') ? true : false;
+            this.$imgsArray;
+        }
+        Tools.prototype = {
+            constructor : Tools,
+            loadingImgs : function(fileSuffixName){
+                this.$imgsArray.each(function() {
+                    $(this).attr("src", "./images/" + $(this).data("imgsrcname") + fileSuffixName);
+                });
+            }
+        };
+
+        window.Tools = new Tools();
+
+        if (window.Tools.isOldIE) {
+            document.write("<script src=\"https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js\"><\/script>");
+        } else {
+            document.write("<script src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"><\/script>");
+            document.write("<script src=\"https://cdn.bootcss.com/wow/1.1.2/wow.min.js\"><\/script>");
+            
+        }
+
+    })(window);
+    </script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="./css/oldBrowser.min.css">
+    <![endif]-->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="commonBG">
+    <div class="myAvatarDiv bounceInUp wow">
+        <img src="http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/VFRa4u46RcaPu*y0OEu4s0EEDXRy7yuMSbKCAHStF4Q!/r/dFkAAAAAAAAA" alt="./images/avatar.jpg">
+        <p>
+            <span class="my-briefinfo">现主攻前端，五年［JavaWeb］开发经验，有大公司与小团队工作经历，以维护后台业务系统起手，后与团队将开发过程中遇到的各类业务问题 抽离重构为可复用的组件；轻微强迫症，注意代码规范</span>
+            <span class="my-name">
+                唐 律
+            </span>
+        </p>
+    </div>
+    <div class="top"></div>
+    <div class="container-fluid mainOutDiv commonBG">
+        <div class="row">
+            <!-- 左侧面板 -->
+            <div class="col-xs-3 pdr-zero col-cus-20">
+                <div class="clearfix">
+                    <div class="left-card-info pull-left zoomIn wow">
+                        <h4 class="left-card-info-header">个人信息</h4>
+                        <div class="left-card-info-body">
+                            <p class="self-info-p"><i class="fa fa-calendar "></i> 28 周岁</p>
+                            <p class="self-info-p"><i class="fa fa-user "></i> 汉族</p>
+                            <p class="self-info-p"><i class="fa fa-location-arrow "></i> 湖南 长沙</p>
+                            <p class="self-info-p"><i class="fa fa-language "></i> 汉语 英语 长沙方言</p>
+                            <p class="self-info-p"><i class="fa fa-phone-square "></i> 186****2382</p>
+                            <p class="self-info-p">
+                                <i class="fa fa-envelope "></i> 
+                                <a href="mailto:tangchaofalv@163.com">tangchaofalv@163.com</a>
+                            </p>
+                            <p class="self-info-p">
+                                <i class="fa fa-github "></i> 
+                                <a href="https://tangme.github.io" target="_blank">github.com/tangme</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="left-card-info pull-left zoomIn wow">
+                        <h4 class="left-card-info-header">软件技能</h4>
+                        <div class="left-card-info-body">
+                            <div class="progress-div">
+                                <span class="progress-name">JavaScript</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
+                                        <div class="progress-value">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-div">
+                                <span class="progress-name">Vue</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
+                                        <div class="progress-value">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-div">
+                                <span class="progress-name">jQuery</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 85%;">
+                                        <div class="progress-value">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-div">
+                                <span class="progress-name">Extjs4</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 60%;">
+                                        <div class="progress-value">60%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-div">
+                                <span class="progress-name">HTML</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 78%;">
+                                        <div class="progress-value">78%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-div">
+                                <span class="progress-name">CSS</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 85%;">
+                                        <div class="progress-value">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-div">
+                                <span class="progress-name">Bootstrap</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
+                                        <div class="progress-value">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-div">
+                                <span class="progress-name">Java</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 85%;">
+                                        <div class="progress-value">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-div">
+                                <span class="progress-name">SQL</span>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 70%;">
+                                        <div class="progress-value">70%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-card-info pull-left zoomIn wow">
+                        <h4 class="left-card-info-header">兴趣爱好</h4>
+                        <ul class="my-hobby-ul clearfix">
+                            <li><img src="" alt="徒步" data-imgsrcname="hiking">
+                                <p>徒步</p>
+                            </li>
+                            <li><img src="" alt="骑行" data-imgsrcname="bick">
+                                <p>骑行</p>
+                            </li>
+                            <li><img src="" alt="羽毛球" data-imgsrcname="badmintom">
+                                <p>羽毛球</p>
+                            </li>
+                            <li><img src="" alt="摄影" data-imgsrcname="dc">
+                                <p>摄影</p>
+                            </li>
+                            <li><img src="" alt="数码" data-imgsrcname="phone">
+                                <p>数码</p>
+                            </li>
+                            <li><img src="" alt="阅读" data-imgsrcname="reading">
+                                <p>阅读</p>
+                            </li>
+                        </ul>
+                        <p class="my-hobby-p">
+                            <a href="http://v.youku.com/v_show/id_XODExNjUxMjQ0.html" target="_blank">14年骑行川藏(318)线</a>
+                        </p>
+                        <p class="my-hobby-p">
+                            <a href="http://v.youku.com/v_show/id_XMjY5NzMyNDMzMg==.html" target="_blank">17年徒步安纳普尔那环线</a>
+                        </p>
+                        <p class="my-hobby-p">18年考取OW潜水证</p>
+                        <p class="my-hobby-p">喜爱白岩松的文字</p>
+                        <p class="my-hobby-p">爱否科技的小铁粉</p>
+                    </div>
+                    <div class="left-card-info pull-left zoomIn wow">
+                        <h4 class="left-card-info-header">工作学习经历</h4>
+                        <div class="left-card-info-body">
+                            <p class="work-study-p"><i class="fa fa-television"></i> 湖南天骄物流信息科技有限公司</p>
+                            <p class="work-study-p"><i class="fa fa-television"></i> 长沙亿泰科技有限公司</p>
+                            <p class="work-study-p"><i class="fa fa-server"></i> 北京大唐先兴软件技术有限公司</p>
+                            <p class="work-study-p"><i class="fa fa-institution"></i> 湖南工程职院</p>
+                        </div>
+                    </div>
+                    <div class="left-card-info pull-left zoomIn wow">
+                        <h4 class="left-card-info-header">其它参与项目</h4>
+                        <div class="left-card-info-body">
+                            <p class="other-project-p"><i class="fa fa-angle-right"></i> <a href="http://www.cdt-yn.com/" target="_blank">大唐云南发电有限公司网站</a> </p>
+                            <p class="other-project-p"><i class="fa fa-angle-right"></i> 大唐云南分公司业绩考核系统</p>
+                            <p class="other-project-p"><i class="fa fa-angle-right"></i> 湖南华电长沙发电有限公司网站</p>
+                            <p class="other-project-p"><i class="fa fa-angle-right"></i> <a href="http://www.china-cdto.com" target="_blank">大唐集团海外投资有限公司网站</a></p>
+                            <p class="other-project-p"><i class="fa fa-angle-right"></i> <a href="http://www.cdt-my.com/" target="_blank">大唐集团煤业有限公司网站</a></p>
+                            <p class="other-project-p"><i class="fa fa-angle-right"></i> 湖南华电常德发电有限公司网站</p>
+                            <p class="other-project-p"><i class="fa fa-angle-right"></i> 耒阳电厂在线考试系统</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧面板 -->
+            <div class="col-xs-9 col-cus-79">
+                <!-- <ul class="panel-tab-ul clearfix">
+                    <li data-tab="workExp">
+                        <span>
+                            <i class="fa fa-laptop fa-lg"></i>
+                        </span>
+                        工作经历
+                    </li>
+                    <li data-tab="lifeExp">
+                        <span>
+                            <i class="fa fa-map-o fa-lg"></i>
+                        </span>
+                        生活经历
+                    </li>
+                    <li>
+                        <span>
+                            <i class="fa fa-object-group fa-lg"></i>
+                        </span>
+                        影像作品
+                    </li>
+                </ul> -->
+                <div class="main">
+                    <hr class="split-line">
+                    <!-- 工作经历 -->
+                    <ul class="cbp_tmtimeline workExp tabContent">
+                        <li class="slideInRight wow">
+                            <time class="cbp_tmtime" datetime="2013-04-10 18:30">
+                                <span></span> 
+                                <span>至今</span>
+                            </time>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>某所化学试剂管理系统</h2>
+                                <p class="borderBottom">
+                                    <code>Vue 2.x</code>
+                                    <code>JavaScript ES6</code>
+                                    <code>Element</code>
+                                    <code>SVN</code>
+                                </p>
+                                <div class="bs-callout bs-callout-info" id="callout-alerts-dismiss-plugin">
+                                    <h4>职责与成果</h4>
+                                    <p>独立完成项目PC端、触屏端界面构建，以及各类交互设计与实现（如：扫码枪获取二维码数据）</p>
+                                    <p>编写支持上标、下标输入的文本框组件（FF，webkit available）</p>
+                                    <p>二度封装 Autocomplete 组件，使其文本框及建议下拉框支持上下标等富文本标签</p>
+                                </div>
+                                <ul class="work-info">
+                                    <li>制作提供给触屏端使用的虚拟键盘，方便快速检索数据内容</li>
+                                    <li>根据设计ECharts的大小，动态计算每页展示图表数目的轮播图</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="slideInRight wow">
+                            <time class="cbp_tmtime" datetime="2013-04-10 18:30">
+                                <span>01~09</span> 
+                                <span>2018</span>
+                            </time>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>无车承运系统</h2>
+                                <p class="borderBottom">
+                                    <code>Vue 2.x</code>
+                                    <code>JavaScript ES6</code>
+                                    <code>iView</code>
+                                    <code>Git</code>
+                                </p>
+                                <div class="bs-callout bs-callout-info" id="callout-alerts-dismiss-plugin">
+                                    <h4>职责与成果</h4>
+                                    <p>独立完成产品前端界面的构建，以及各类交互设计与实现</p>
+                                    <p>负责菜单权限的设计与开发，实现菜单数据根据登陆角色不同而动态获取并配置路由，通过将数据保存至sessionStorage解决刷新后，因VUE重新实例话而丢失菜单的情况；</p>
+                                    <p>物流运单上报业务模块：在人员录单、客服审核、财务审核、运营(资金、运单)上报四个环节上，进行业务操作整合，显著提高操作效率，加强信息校验，规避人为误操作</p>
+                                    <p>引入VUX移动UI框架，快速搭建WebApp，方便市场人员查看统计信息</p>
+                                </div>
+                                <ul class="work-info">
+                                    <li>备份VUEX核心数据至sessionStorage，并解决刷新页面VUEX数据丢失问题</li>
+                                    <li>设计编写菜单权限，根据服务端传回的数据，动态配置路由地址与菜单显示</li>
+                                    <li>二度封装iView的Menu组件，使其支持无限层级的菜单</li>
+                                    <li>封装图片上传组件，使其支持上传进度，展示图片大图，重置功能</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="slideInRight wow">
+                            <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>2017-09</span> <span>2017</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>中国大唐贵州网站项目整合</h2>
+                                <p class="borderBottom">
+                                    <code>ExtJs 4.2.3</code>
+                                    <code>JavaScript ES5</code>
+                                    <code>Bootstrap</code>
+                                    <code>Java7 (SSH)</code>
+                                    <code>ORACLE</code>
+                                    <code>SVN</code>
+                                </p>
+                                <div class="bs-callout bs-callout-info" id="callout-alerts-dismiss-plugin">
+                                    <h4>职责与成果</h4>
+                                    <p>担任项目经理，在项目前期 通过即时与上级反馈和调整项目人员任务与进度，顺利解决数次客户临时要求的项目演示。</p>
+                                    <p>项目期间：负责编写 展示面板基类及其接口，解决各代办信息、图形统计等展示需求；通过引用开源拖拽控件，并在其基础上扩展属性方法 完成拖拽排序保存功能；使用轮询技术方案，完成各类信息的定时更新；重写页面跳转逻辑，加快动静态页面访问速度。</p>
+                                </div>
+                                <ul class="work-info">
+                                    <li>完成需求调研、分析，任务布置，文档编写，项目演示等职责</li>
+                                    <li>编写 (图形统计、消息通知代办) 展示面板基类及接口等事项</li>
+                                    <li>扩展插件的属性与方法，实现面板可拖拽、排序保存功能</li>
+                                    <li>设计与编码页面主题切换功能，给用户提供在后台选择页面主题风格</li>
+                                    <li>使用Gulp完成前端代码的校验、文件合并压缩等自动化作业</li>
+                                    <li>分析旧站数据结构，编写迁移代码，更新至新版数据库 ( ORACLE TO ORACLE )</li>
+                                </ul>
+                                <!-- <p>1.负责外网部分前端页面构建，与后台业务编码</p>
+                                <p>2.负责内网前端框架搭建，实现拖拽功能</p> -->
+                            </div>
+                        </li>
+                        <li class="slideInRight wow">
+                            <time class="cbp_tmtime" datetime="2013-04-15 13:15"><span>2014 (1.0) 2016 (2.0)</span> <span>2016</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>中国大唐集团网站外网 || 后台2.0</h2>
+                                <p class="borderBottom">
+                                    <code>ExtJs 4.2.3</code>
+                                    <code>JavaScript ES5</code>
+                                    <code>CSS3</code>
+                                    <code>Bootstrap</code>
+                                    <code>Java1.5 (SSH) || java7</code>
+                                    <code>ORACLE</code>
+                                    <code>SVN</code>
+                                </p>
+                                <div class="">
+                                    <div class="bs-callout bs-callout-info clearfix" id="callout-alerts-dismiss-plugin">
+                                        <a href="http://www.china-cdt.com/" target="_blank">
+                                        <img src="http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/za*CLwNhkZgG3Cs9Gj75XuJnN*w*HMvSZNeYPvy73qI!/r/dDEBAAAAAAAA" alt="" ="./images/datangjituanweb.jpg" alt="" class="demoImg">
+                                        </a>
+                                        <h4>职责与成果</h4>
+                                        <p>
+                                            使用开源uEditor编辑器，解决其本身个别BUG（IE8兼容、路径错误等问题）,最终让在线编辑器此类功能 短平快的消化与上线，并在其它网站中升级复用。
+                                        </p>
+                                        <p>设计编写 页面配置模版，实现导航菜单、页面背景、列表样式、底部信息等组件，供用户自行设置，显著降低了网站的维护成本。</p>
+                                        <p>重新设计与编写静态页面目录生成规则，解决服务器因单个目录里文件数量过多，而导致的响应缓慢问题。</p>
+                                        <p>参与设计与制定 网页专题、投票模块的功能和排版，协同制定开发标准，使其后类似功能得以流程化、复用性强。</p>
+                                        <p>完善特殊字符过滤规则，有效防范XSS攻击，SQL注入。</p>
+                                    </div>
+                                    <ul class="work-info">
+                                        <li>编写页面配置模版，实现页面常用组件 可视化配置操作；大幅提高页面制作效率</li>
+                                        <li>采用BootStrap，解决页面同时适配桌面端、移动端响应的需求</li>
+                                        <li>封装常用 JavaScript工具方法 至 JS对象 或 jQuery插件</li>
+                                        <li>引入uEditor编辑器，解决在线富文本稿件的编辑需求</li>
+                                        <li>使用Grunt完成前端代码的校验、文件合并压缩等自动化作业</li>
+                                        <li>分析旧站数据结构，编写迁移代码，更新至新版数据库 ( XML TO ORACLE )</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="slideInRight wow">
+                            <time class="cbp_tmtime" datetime="2013-04-16 21:30"><span>02～09</span> <span>2015</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-earth"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>大唐湖南分公司岗位培训达标管理信息系统</h2>
+                                <p class="borderBottom">
+                                    <code>ExtJs 4.2.1</code>
+                                    <code>Delphi</code>
+                                    <code>Java7</code>
+                                    <code>ORACLE</code>
+                                    <code>SVN</code>
+                                </p>
+                                <ul class="work-info">
+                                    <li>编码阅卷模块：实现上锁、随机抽取试卷、单选、多选、判断的自动阅卷、多人同时审阅不记名试卷的需求</li>
+                                    <li>考生答题记录：通过实时写入答题记录至cookie，完成考生答题记录的快速读写</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="slideInRight wow">
+                            <time class="cbp_tmtime" datetime="2013-04-17 12:11"><span>2012 (1.0) 2015 (2.0)</span> <span>2012</span></time>
+                            <div class="cbp_tmicon cbp_tmicon-screen"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>广东粤电先进发电企业考核管理系统1.0 || 2.0</h2>
+                                <p class="borderBottom">
+                                    <code>ExtJs 4.2.1</code>
+                                    <code>oxhide</code>
+                                    <code>Java1.5 || java7</code>
+                                    <code>ORACLE</code>
+                                    <code>SVN</code>
+                                </p>
+                                <ul class="work-info">
+                                    <li>编码 权限分配模块：通过扩展控件的属性与方式，实现了多选下拉选择框 去重、校验功能</li>
+                                    <li>与甲方门户系统厂商沟通，编写并提供本系统相关数据的取数接口(XML形式)</li>
+                                    <li>扩展Extjs合并单元格功能，解决本系统 各查询统计业务模块的显示难题</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-div">
+        <p>
+            <i class="fa fa-copyright fa-lg"></i> Designed by tanglv Code by tanglv
+        </p>
+    </div>
+</body>
+<script type="text/javascript" src="./js/index.js"></script>
+</html>

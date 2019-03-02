@@ -1,0 +1,539 @@
+body {
+    background: #333;
+}
+/* === 顶部背景图片 === */
+.topBG-div {
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    /*background: url(../images/Cosmos03.jpg) no-repeat;*/
+    background: url(http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/L5LVdtqXgNQU57ctSCl*1UjC3VSsduXimvr3GF9bEac!/r/dEIBAAAAAAAA) no-repeat;
+    background-size: cover;
+    opacity: .9;
+    box-shadow: 0 0 40px 1px;
+}
+
+/* === 头像部分 === */
+.portrait-out-div {
+    margin-top: 110px;
+    height: 100px;
+    box-shadow: inset 0 6px 10px -6px black;
+}
+
+.portrait-inner-div {
+    margin: -50px auto;
+    width: 90%;
+    position: relative;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 10px;
+}
+
+.portrait-inner-div>img {
+    border-radius: 50%;
+    width: 100px;
+    box-shadow: 0 0 20px 1px;
+}
+
+.portrait-inner-div>p {
+    position: absolute;
+    bottom: 10px;
+    left: 120px;
+    margin: 0;
+}
+
+.portrait-inner-div>p label {
+    font-size: 2em;
+    font-family: sans-serif, Microsoft YaHei, fantasy;
+    font-weight: normal;
+}
+
+.portrait-inner-div>p code {
+    color: #fff;
+    background-color: #999;
+    margin-left: 10px;
+}
+
+.selfBrief-div {
+    margin: -30px auto 0;
+}
+
+/* === 项目信息||个人信息 选项卡 ===*/
+#guideTab {
+    background: #00d2ff;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3a7bd5, #00d2ff);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #3a7bd5, #00d2ff);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 1px 0;
+    box-shadow: 0 1px 5px 0 #555;
+}
+
+#guideTab hr {
+    margin: 0;
+}
+
+#guideTab p {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    color: #ddd;
+}
+
+#guideTab p span {
+    display: inline-block;
+    padding: .5em;
+    margin: 0 .5em;
+}
+
+.selectedTab {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    color: #f5f5f5;
+    font-weight: normal;
+    font-size: 1.1em;
+    text-shadow: 0 0 .1em #ccc;
+}
+
+#selfinfoMainDiv {
+    display: none;
+    padding-top: 15px;
+}
+
+.clean-padding {
+    padding: 0;
+}
+
+
+.copyright-p{
+	position: fixed;
+	top:110px;
+	width: 100%;
+	margin:0;
+	padding: 1em;
+	color:#555;
+	text-align: center;
+}
+
+.project-tag {
+    font-size: .6em;
+}
+
+.project-tag-xs {
+    font-size: .5em;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout>p {
+    padding-right: 5px;
+}
+
+.bs-callout-info {
+    border-left-color: #1b809e;
+}
+
+.work-info {
+    padding-left: 1.2em;
+}
+
+.common-p-style,
+.common-div-style {
+    background: #fff url(http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/N6JvBCeQHSeq3rABR1uu10K3obx0015A5xpIcHZBwyE!/r/dGcBAAAAAAAA) fixed;
+    /*background: #fff url(../images/bg6.png) fixed;*/
+}
+
+.self-info-p {
+    background-color: #eee;
+    margin: 6px auto;
+    padding: 5px;
+    text-indent: 2px;
+    border-bottom: 1px dashed #ccc;
+    border-radius: 3px;
+}
+
+.work-study-p {
+    background-color: #eee;
+    margin: 6px auto;
+    padding: 5px;
+    text-indent: 2px;
+    border-bottom: 1px dashed #ccc;
+    border-radius: 3px;
+}
+
+.other-project-p {
+    background-color: #eee;
+    margin: 7px auto;
+    padding: 5px;
+    text-indent: 2px;
+    border-bottom: 1px dashed #ccc;
+    border-radius: 3px;
+}
+
+.my-hobby-ul {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.my-hobby-ul li {
+    float: left;
+    display: block;
+    width: 25%;
+    text-align: center;
+}
+
+.my-hobby-p {
+    text-indent: .5em;
+    border-left: 3px solid #bbb;
+    margin: 10px auto;
+    background-color: #eee;
+    padding: 2px 0;
+}
+
+
+/* ============================================================== */
+
+
+/* ======================= progress bar ========================= */
+
+
+/* ============================================================== */
+
+.progress-div {
+    text-indent: 0;
+    padding: 3px 0 3px 9px;
+    border-left: 2px solid #eee;
+    border-right: 2px solid #eee;
+    border-bottom: 1px dashed #eee;
+}
+
+.progress-div:first-child {
+    padding-top: 10px;
+    border-top: 2px solid #eee;
+    border-radius: 5px 5px 0 0;
+}
+
+.progress-div:last-child {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    border-radius: 0 0 5px 5px;
+}
+
+.progress-name {
+    display: inline-block;
+    width: 80px;
+    vertical-align: top;
+}
+
+.progress {
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    background: #eee;
+    padding: 3px;
+    overflow: visible;
+    border-radius: 3px;
+    margin: 0;
+    width: 68%;
+}
+
+.progress .progress-bar {
+    border-radius: 4px;
+    position: relative;
+    animation: animate-positive 2s;
+}
+
+.progress .progress-value {
+    /*display: block;*/
+    display: none;
+    padding: 3px 7px;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 4px;
+    background: #191919;
+    border: 1px solid #000;
+    position: absolute;
+    top: -40px;
+    right: -10px;
+}
+
+.progress .progress-value:after {
+    content: "";
+    border-top: 10px solid #191919;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    bottom: -6px;
+    left: 26%;
+}
+
+.progress-bar.active {
+    animation: reverse progress-bar-stripes 0.40s linear infinite, animate-positive 2s;
+}
+
+@-webkit-keyframes animate-positive {
+    0% {
+        width: 0;
+    }
+}
+
+@keyframes animate-positive {
+    0% {
+        width: 0;
+    }
+}
+
+
+
+
+/* ================================================================================== */
+
+
+/* ===============================  vertical timeline =============================== */
+
+
+/* ================================================================================== */
+
+
+/*@font-face {
+    font-family: 'ecoico';
+    src: url('../fonts/timelineicons/ecoico.eot');
+    src: url('../fonts/timelineicons/ecoico.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/timelineicons/ecoico.woff') format('woff'),
+    url('../fonts/timelineicons/ecoico.ttf') format('truetype'),
+    url('../fonts/timelineicons/ecoico.svg#ecoico') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+
+/* Made with http://icomoon.io/ */
+
+.cbp_tmtimeline {
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+
+
+
+/* The line */
+
+.cbp_tmtimeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: #afdcf8;
+    left: 20%;
+    margin-left: -10px;
+}
+
+
+/* The date/time */
+
+.cbp_tmtimeline>li .cbp_tmtime {
+    display: block;
+    width: 25%;
+    padding-right: 100px;
+    position: absolute;
+}
+
+.cbp_tmtimeline>li .cbp_tmtime span {
+    display: block;
+    text-align: right;
+}
+
+.cbp_tmtimeline>li .cbp_tmtime span:first-child {
+    font-size: 0.9em;
+    color: #bdd0db;
+}
+
+.cbp_tmtimeline>li .cbp_tmtime span:last-child {
+    font-size: 2.9em;
+    color: #3594cb;
+}
+
+.cbp_tmtimeline>li:nth-child(odd) .cbp_tmtime span:last-child {
+    color: #6cbfee;
+}
+
+
+
+
+
+
+
+
+/* Right content */
+
+.cbp_tmtimeline>li .cbp_tmlabel {
+    margin: 0 0 15px 25%;
+    background: #3594cb;
+    color: #fff;
+    padding: 2em;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.4;
+    position: relative;
+    border-radius: 5px;
+}
+
+.cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
+    background: #6cbfee;
+}
+
+.cbp_tmtimeline>li .cbp_tmlabel h2 {
+    margin-top: 0;
+    padding: 0 0 10px 0;
+    font-size: 1.5em;
+    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+
+
+
+
+/* The triangle */
+
+.cbp_tmtimeline>li .cbp_tmlabel:after {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #3594cb;
+    border-width: 10px;
+    top: 10px;
+}
+
+.cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
+    border-right-color: #6cbfee;
+}
+
+
+
+
+
+
+
+
+/* The icons */
+
+.cbp_tmtimeline>li .cbp_tmicon {
+    width: 40px;
+    height: 40px;
+    font-family: 'ecoico';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 1.4em;
+    line-height: 40px;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    color: #fff;
+    background: #46a4da;
+    border-radius: 50%;
+    box-shadow: 0 0 0 8px #afdcf8;
+    text-align: center;
+    left: 20%;
+    top: 0;
+    margin: 0 0 0 -25px;
+}
+
+.cbp_tmicon-phone:before {
+    font-family: 'FontAwesome';
+    content: "\f073";
+}
+
+.cbp_tmicon-screen:before {
+    font-family: 'FontAwesome';
+    content: "\f097";
+}
+
+.cbp_tmicon-mail:before {
+    font-family: 'FontAwesome';
+    content: "\f097";
+}
+
+.cbp_tmicon-earth:before {
+    font-family: 'FontAwesome';
+    content: "\f097";
+}
+
+
+
+
+
+
+
+
+/* Example Media Queries */
+
+@media screen and (max-width: 65.375em) {
+
+    .cbp_tmtimeline>li .cbp_tmtime span:last-child {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 47.2em) {
+    .cbp_tmtimeline:before {
+        display: none;
+    }
+
+    .cbp_tmtimeline>li .cbp_tmtime {
+        width: 100%;
+        position: relative;
+        padding: 0 0 20px 0;
+    }
+
+    .cbp_tmtimeline>li .cbp_tmtime span {
+        text-align: left;
+    }
+
+    .cbp_tmtimeline>li .cbp_tmlabel {
+        margin: 0 0 30px 0;
+        padding: 1em;
+        font-weight: 400;
+        font-size: 95%;
+    }
+
+    .cbp_tmtimeline>li .cbp_tmlabel:after {
+        right: auto;
+        left: 20px;
+        border-right-color: transparent;
+        border-bottom-color: #3594cb;
+        top: -20px;
+    }
+
+    .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
+        border-right-color: transparent;
+        border-bottom-color: #6cbfee;
+    }
+
+    .cbp_tmtimeline>li .cbp_tmicon {
+        position: relative;
+        float: right;
+        left: auto;
+        margin: -55px 5px 0 0;
+    }
+}
