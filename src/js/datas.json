@@ -2,23 +2,23 @@
 	{
 		"projectName":"网络流量监控系统",
 		"technologyStack":["Vue 2.x","Qunee","Element","SVN"],
-		"projectLiftTime":["至今","2018"],
+		"projectLiftTime":["至今","2019.02"],
 		"dutyAndAchieve":[
 			"担任项目组前端组长，进行代码审核与重构",
 			"集成Qunee Editor至项目环境，基于拖拽交互实现可视化数据持久化",
-			"集成Gis(类似 Cesium三维地球库)至项目环境,实现类Echart数据迁徙的航线图"
+			"集成GVML(类似 Cesium三维地球库)至项目环境,实现类Echart数据迁徙的航线图"
 		],
 		"todos":[
 			"编码含有折线图、饼图、柱状图、中国地图的Echarts首页",
 			"重构设备管理(PC、交换机、服务器、路由器、探针)业务模块，使维护表单同时支持传统的表格调用与Qunee画布拖拽调用"
 		],
-		"projectImages":[],
-		"onlineUrl":[]
+		"projectImages":["http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/9gtxxpadS2HUpLH2w2TInD1ML08TfnjC9FtmWSqCdUI!/r/dLgAAAAAAAAA"],
+		"onlineUrl":["http://www.china-cdt.com/"]
 	},
 	{
 		"projectName":"某所化学试剂管理系统",
 		"technologyStack":["Vue 2.x","JavaScript ES6","Element","SVN"],
-		"projectLiftTime":["至今","2018"],
+		"projectLiftTime":["2018","10～12"],
 		"dutyAndAchieve":[
 			"独立完成项目PC端、触屏端界面构建，以及各类交互设计与实现（如：扫码枪获取二维码数据）",
 			"编写支持上标、下标输入的文本框组件（FF，webkit available）",
@@ -28,13 +28,13 @@
 			"制作提供给触屏端使用的虚拟键盘，方便快速检索数据内容",
 			"根据设计ECharts的大小，动态计算每页展示图表数目的轮播图"
 		],
-		"projectImages":[],
-		"onlineUrl":[]
+		"projectImages":["http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/QH0vIPvEP8tUXWaZycDsZm95ehd1u*S*6jLU6KhQjJM!/r/dFQBAAAAAAAA"],
+		"onlineUrl":["http://www.china-cdt.com/"]
 	},
 	{
 		"projectName":"无车承运系统",
 		"technologyStack":["Vue 2.x","JavaScript ES6","iView","Git"],
-		"projectLiftTime":["2018","01~09"],
+		"projectLiftTime":["2018","01～09"],
 		"dutyAndAchieve":[
 			"独立完成产品前端界面的构建，以及各类交互设计与实现",
 			"负责菜单权限的设计与开发，实现菜单数据根据登陆角色不同而动态获取并配置路由，通过将数据保存至sessionStorage解决刷新后，因VUE重新实例话而丢失菜单的情况；",
@@ -53,7 +53,7 @@
 	{
 		"projectName":"中国大唐贵州网站项目整合",
 		"technologyStack":["ExtJs 4.2.3","JavaScript ES5","Bootstrap","Java7 (SSH)","ORACLE","SVN"],
-		"projectLiftTime":["2017","2017-09"],
+		"projectLiftTime":["2017","2016～11 2017～09"],
 		"dutyAndAchieve":[
 			"担任项目经理，在项目前期 通过即时与上级反馈和调整项目人员任务与进度，顺利解决数次客户临时要求的项目演示。",
 			"项目期间：负责编写 展示面板基类及其接口，解决各代办信息、图形统计等展示需求；通过引用开源拖拽控件，并在其基础上扩展属性方法 完成拖拽排序保存功能；使用轮询技术方案，完成各类信息的定时更新；重写页面跳转逻辑，加快动静态页面访问速度。"

@@ -199,12 +199,18 @@
                         <p class="my-hobby-p">爱否科技的小铁粉</p>
                     </div>
                     <div class="left-card-info pull-left zoomIn wow">
-                        <h4 class="left-card-info-header">工作学习经历</h4>
+                        <h4 class="left-card-info-header">工作经历</h4>
                         <div class="left-card-info-body">
-                            <p class="work-study-p"><i class="fa fa-television"></i> 湖南天骄物流信息科技有限公司</p>
-                            <p class="work-study-p"><i class="fa fa-television"></i> 长沙亿泰科技有限公司</p>
+                            <p class="work-study-p"><i class="fa fa-truck"></i> 湖南天骄物流信息科技有限公司</p>
+                            <p class="work-study-p"><i class="fa fa-sitemap"></i> 长沙亿泰科技有限公司</p>
                             <p class="work-study-p"><i class="fa fa-server"></i> 北京大唐先兴软件技术有限公司</p>
+                        </div>
+                    </div>
+                    <div class="left-card-info pull-left zoomIn wow">
+                        <h4 class="left-card-info-header">学习经历</h4>
+                        <div class="left-card-info-body">
                             <p class="work-study-p"><i class="fa fa-institution"></i> 湖南工程职院</p>
+                            <p class="work-study-p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;专业：软件工程</p>
                         </div>
                     </div>
                     <div class="left-card-info pull-left zoomIn wow">
@@ -260,7 +266,7 @@
                                 </p>
                                 <div class="bs-callout bs-callout-info" id="callout-alerts-dismiss-plugin" v-if="item.dutyAndAchieve && item.dutyAndAchieve.length > 0">
                                     <a href="http://www.china-cdt.com/" target="_blank" v-if="!!item.projectImages && item.projectImages.length > 0">
-                                        <img src="http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/za*CLwNhkZgG3Cs9Gj75XuJnN*w*HMvSZNeYPvy73qI!/r/dDEBAAAAAAAA" alt="" class="demoImg">
+                                        <img :src="item.projectImages[0]" alt="" class="demoImg">
                                     </a>
                                     <h4>职责与成果</h4>
                                     <p v-for="dutyAndAchieve in item.dutyAndAchieve">{{dutyAndAchieve}}</p>
