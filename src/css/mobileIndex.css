@@ -13,6 +13,11 @@ body {
     box-shadow: 0 0 40px 1px;
 }
 
+.marginRight5{
+    margin-right: 5px;
+    line-height: 20px;
+}
+
 /* === 头像部分 === */
 .portrait-out-div {
     margin-top: 110px;

@@ -24,6 +24,18 @@ $.fn.extend({
     }
 });
 
+var projectApp = new Vue({
+    el:'#projectApp',
+    created:function(){
+        $.getJSON("./js/datas.json", function(json){
+            projectApp.projectDatas = json;
+        });
+    },
+    data:{
+        projectDatas:[]
+    }
+});
+
 $(document).ready(function() {
     PageObj.$selfinfoTab = $("#selfinfo-tab");
     PageObj.$selfinfoMainDiv = $("#selfinfoMainDiv");
