@@ -1,6 +1,26 @@
 body {
     background: #333;
 }
+
+#mobileApp{
+    overflow: hidden;
+}
+.slideRight-fade-enter-active,.slideLeft-fade-enter-active {
+  transition: all .2s ease;
+}
+.slideRight-fade-leave-active,.slideLeft-fade-leave-active {
+  transition: all .2s ease;
+}
+.slideRight-fade-enter,.slideLeft-fade-leave-to{
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.slideRight-fade-leave-to,.slideLeft-fade-enter
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
 /* === 顶部背景图片 === */
 .topBG-div {
     position: fixed;
@@ -101,7 +121,7 @@ body {
 }
 
 #selfinfoMainDiv {
-    display: none;
+    /*display: none;*/
     padding-top: 15px;
 }
 
@@ -465,7 +485,7 @@ body {
 }
 
 .cbp_tmicon-phone:before {
-    font-family: 'FontAwesome';
+    font-family: 'Font Awesome 5 Free';
     content: "\f073";
 }
 

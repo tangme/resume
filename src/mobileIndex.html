@@ -17,13 +17,13 @@
     </script>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/mobileIndex.css">
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" id="mobileApp">
         <div class="row">
             <!-- 顶部头像 简介 选项卡 -->
             <div class="topBG-div">
@@ -42,203 +42,88 @@
             </div>
             <div class="col-xs-12 common-div-style selfBrief-div">
                 <div class="panel panel-info">
-                    <div class="panel-heading">
-                        现主攻前端，五年［JavaWeb］开发经验，熟练使用VUE，有大公司与小团队工作经历，以维护后台业务系统起手，后与团队将开发过程中遇到的各类业务问题 抽离重构为可复用的组件；轻微强迫症，注意代码规范
-                    </div>
+                    <div class="panel-heading briefinfo-div"></div>
                 </div>
             </div>
             <div class="col-xs-12 clean-padding">
                 <div id="guideTab">
                     <hr>
                     <p>
-                        <span id="project-tab" class="selectedTab">项目经验</span>
-                        <span id="selfinfo-tab">个人信息</span>
+                        <span id="project-tab" :class="{selectedTab:activeTab==0}" @click="handleClickTab(0)">项目经验</span>
+                        <span id="selfinfo-tab" :class="{selectedTab:activeTab==1}" @click="handleClickTab(1)">个人信息</span>
                     </p>
                     <hr>
                 </div>
             </div>
-            <!-- 项目经验 -->
-            <div class="col-xs-12 common-div-style" id="projectMainDiv">
-                <ul class="cbp_tmtimeline workExp tabContent" id="projectApp">
-                    <li v-for="item in projectDatas">
-                        <time class="cbp_tmtime" datetime="2013-04-10 18:30">
-                            <span>{{item.projectLiftTime[1]}}</span>
-                            <span>{{item.projectLiftTime[0]}}</span>
-                        </time>
-                        <div class="cbp_tmicon cbp_tmicon-phone"></div>
-                        <div class="cbp_tmlabel">
-                            <h2>{{item.projectName}}</h2>
-                            <p class="borderBottom">
-                                <code v-for="technologyStack in item.technologyStack" class="marginRight5">{{technologyStack}}</code>
-                            </p>
-                            <div class="bs-callout bs-callout-info" id="callout-alerts-dismiss-plugin" v-if="!!item.dutyAndAchieve && item.dutyAndAchieve.length > 0">
-                                <h4>职责与成果</h4>
-                                <p v-for="dutyAndAchieve in item.dutyAndAchieve">{{dutyAndAchieve}}</p>
+            <transition :name="animateClass" mode="out-in">
+                <!-- 项目经验 -->
+                <div class="col-xs-12 common-div-style" id="projectMainDiv" key="projectMainDiv" v-if="activeTab == 0">
+                    <ul class="cbp_tmtimeline workExp tabContent" id="projectApp">
+                        <li class="zoomInUp wow" v-for="item in projectDatas">
+                            <time class="cbp_tmtime" datetime="2013-04-10 18:30">
+                                <span>{{item.projectLiftTime[1]}}</span>
+                                <span>{{item.projectLiftTime[0]}}</span>
+                            </time>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>{{item.projectName}}</h2>
+                                <p class="borderBottom">
+                                    <code v-for="technologyStack in item.technologyStack" class="marginRight5">{{technologyStack}}</code>
+                                </p>
+                                <div class="bs-callout bs-callout-info" id="callout-alerts-dismiss-plugin" v-if="!!item.dutyAndAchieve && item.dutyAndAchieve.length > 0">
+                                    <h4>职责与成果</h4>
+                                    <p v-for="dutyAndAchieve in item.dutyAndAchieve">{{dutyAndAchieve}}</p>
+                                </div>
+                                <ul class="work-info">
+                                    <li v-for="todo in item.todos">{{todo}}</li>
+                                </ul>
                             </div>
-                            <ul class="work-info">
-                                <li v-for="todo in item.todos">{{todo}}</li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- 个人面板 -->
-            <div class="col-xs-12 common-div-style" id="selfinfoMainDiv">
-                <div class="panel panel-primary zoomInUp wow">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">个人信息</h3>
-                    </div>
-                    <div class="panel-body">
-                        <p class="self-info-p common-p-style"><i class="fa fa-calendar "></i> 28周岁</p>
-                        <p class="self-info-p common-p-style"><i class="fa fa-user "></i> 汉族</p>
-                        <p class="self-info-p common-p-style"><i class="fa fa-location-arrow "></i> 湖南长沙</p>
-                        <p class="self-info-p common-p-style"><i class="fa fa-language "></i> 汉语 英语 长沙方言</p>
-                        <p class="self-info-p common-p-style"><i class="fa fa-phone-square "></i> 186****2382</p>
-                        <p class="self-info-p common-p-style"><i class="fa fa-envelope "></i> tangchaofalv@163.com</p>
-                        <p class="self-info-p common-p-style"><i class="fa fa-github "></i> https://tangme.github.io</p>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="panel panel-primary zoomInUp wow">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">软件技能</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="progress-div">
-                            <span class="progress-name">JavaScript</span>
+                <!-- 个人面板 -->
+                <div class="col-xs-12 common-div-style" key="selfinfoMainDiv" id="selfinfoMainDiv" v-else>
+                    <selfinfoitem-panel v-if="selfInfo" title="个人信息">
+                        <p class="self-info-p common-p-style" v-for="item in selfInfo"><i :class="item.icon"></i>
+                            <a v-if="item.onlineUrl" :href="item.onlineUrl" target="_blank">{{item.title}}</a>
+                            <template v-else>{{item.title}}</template>
+                        </p>
+                    </selfinfoitem-panel>
+                    <selfinfoitem-panel v-if="skillInfo" title="软件技能">
+                        <div class="progress-div" v-for="item in skillInfo">
+                            <span class="progress-name">{{item.name}}</span>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
-                                    <div class="progress-value">80%</div>
+                                <div class="progress-bar progress-bar-info progress-bar-striped active" :style="{width: item.familiarity + '%'}">
+                                    <div class="progress-value">{{item.familiarity}}</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="progress-div">
-                            <span class="progress-name">Vue</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
-                                    <div class="progress-value">80%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-div">
-                            <span class="progress-name">jQuery</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 85%;">
-                                    <div class="progress-value">85%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-div">
-                            <span class="progress-name">Extjs4</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 60%;">
-                                    <div class="progress-value">60%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-div">
-                            <span class="progress-name">HTML</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 78%;">
-                                    <div class="progress-value">78%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-div">
-                            <span class="progress-name">CSS</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 85%;">
-                                    <div class="progress-value">85%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-div">
-                            <span class="progress-name">Bootstrap</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 80%;">
-                                    <div class="progress-value">80%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-div">
-                            <span class="progress-name">Java</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 85%;">
-                                    <div class="progress-value">85%</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="progress-div">
-                            <span class="progress-name">SQL</span>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info progress-bar-striped active" style="width: 70%;">
-                                    <div class="progress-value">70%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-primary zoomInUp wow">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">兴趣爱好</h3>
-                    </div>
-                    <div class="panel-body">
+                    </selfinfoitem-panel>
+                    <selfinfoitem-panel v-if="hobbyInfo" title="兴趣爱好">
                         <ul class="my-hobby-ul clearfix">
-                            <li><img src="./images/hiking.svg" alt="">
-                                <p>徒步</p>
-                            </li>
-                            <li><img src="./images/bick.svg" alt="">
-                                <p>骑行</p>
-                            </li>
-                            <li><img src="./images/badmintom.svg" alt="">
-                                <p>羽毛球</p>
-                            </li>
-                            <li><img src="./images/dc.svg" alt="">
-                                <p>摄影</p>
-                            </li>
-                            <li><img src="./images/phone.svg" alt="">
-                                <p>数码</p>
-                            </li>
-                            <li><img src="./images/reading.svg" alt="">
-                                <p>阅读</p>
+                            <li v-for="item in hobbyInfo.hobbys"><img :src="item.imgUrl" alt="徒步" :data-imgsrcname="item.name">
+                                <p>{{item.name}}</p>
                             </li>
                         </ul>
-                        <p class="my-hobby-p">14年骑行川藏(318)线</p>
-                        <p class="my-hobby-p">17年徒步安纳普尔那环线</p>
-                        <p class="my-hobby-p">18年考取OW潜水证</p>
-                        <p class="my-hobby-p">喜爱白岩松的文字</p>
-                        <p class="my-hobby-p">爱否科技的小铁粉</p>
-                    </div>
+                        <p class="my-hobby-p" v-for="item in hobbyInfo.whatIDo">
+                            <a :href="item.onlineUrl" v-if="item.onlineUrl" target="_blank">{{item.name}}</a>
+                            <template v-else>{{item.name}}</template>
+                        </p>
+                    </selfinfoitem-panel>
+                    <selfinfoitem-panel v-if="workInfo" title="工作经历">
+                        <p class="work-study-p common-p-style" v-for="item in workInfo"><i :class="item.icon"></i> {{item.title}}</p>
+                    </selfinfoitem-panel>
+                    <selfinfoitem-panel v-if="studyInfo" title="学习经历">
+                        <p class="work-study-p common-p-style" v-for="item in studyInfo"><i :class="item.icon"></i> {{item.name}}</p>
+                    </selfinfoitem-panel>
+                    <selfinfoitem-panel v-if="projectsInfo" title="其它参与项目">
+                        <p class="other-project-p common-p-style" v-for="item in projectsInfo"><i class="fa fa-angle-right"></i>
+                            <a :href="item.onlineUrl" target="_blank" v-if="item.onlineUrl">{{item.projectName}}</a>
+                            <template v-else>{{item.projectName}}</template>
+                        </p>
+                    </selfinfoitem-panel>
                 </div>
-                <div class="panel panel-primary zoomInUp wow">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">工作学习经历</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="left-card-info-body">
-                            <p class="work-study-p common-p-style"><i class="fa fa-television"></i> 湖南天骄物流信息科技有限公司</p>
-                            <p class="work-study-p common-p-style"><i class="fa fa-television"></i> 长沙亿泰科技有限公司</p>
-                            <p class="work-study-p common-p-style"><i class="fa fa-server"></i> 北京大唐先兴软件技术有限公司</p>
-                            <p class="work-study-p common-p-style"><i class="fa fa-institution"></i> 湖南工程职院</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-primary zoomInUp wow">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">其它参与项目</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="left-card-info-body">
-                            <p class="other-project-p common-p-style"><i class="fa fa-angle-right"></i> 大唐云南发电有限公司网站</p>
-                            <p class="other-project-p common-p-style"><i class="fa fa-angle-right"></i> 大唐云南分公司业绩考核系统</p>
-                            <p class="other-project-p common-p-style"><i class="fa fa-angle-right"></i> 湖南华电长沙发电有限公司网站</p>
-                            <p class="other-project-p common-p-style"><i class="fa fa-angle-right"></i> 大唐集团海外投资有限公司网站</p>
-                            <p class="other-project-p common-p-style"><i class="fa fa-angle-right"></i> 大唐集团煤业有限公司网站</p>
-                            <p class="other-project-p common-p-style"><i class="fa fa-angle-right"></i> 湖南华电常德发电有限公司网站</p>
-                            <p class="other-project-p common-p-style"><i class="fa fa-angle-right"></i> 耒阳电厂在线考试系统</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </transition>
         </div>
     </div>
 </body>
