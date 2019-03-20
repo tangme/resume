@@ -1,28 +1,28 @@
 var projectApp = new Vue({
-    el:'#projectApp',
-    created:function(){
+    el: '#projectApp',
+    created: function() {
         let $this = this;
-        $.getJSON("./js/datas.json", function(json){
-                $this.projectDatas = json;
+        $.getJSON("./js/datas.json", function(json) {
+            $this.projectDatas = json;
         });
     },
-    data:{
-        projectDatas:[]
+    data: {
+        projectDatas: []
     }
 });
 
-Vue.component("left-panel",{
-    props:{
-        title:{
-            type:String,
-            default:'标题'
+Vue.component("left-panel", {
+    props: {
+        title: {
+            type: String,
+            default: '标题'
         },
-        show_default_slot:{
-            type:Boolean,
-            default:true
+        show_default_slot: {
+            type: Boolean,
+            default: true
         }
     },
-    template:`  <div class="left-card-info pull-left zoomIn wow">
+    template: `  <div class="left-card-info pull-left zoomIn wow">
                     <h4 class="left-card-info-header">{{title}}</h4>
                     <div class="left-card-info-body" v-if="show_default_slot">
                         <slot></slot>
@@ -33,20 +33,20 @@ Vue.component("left-panel",{
 });
 
 var leftPanelApp = new Vue({
-    el:'#left-panel-container',
-    data:function(){
+    el: '#left-panel-container',
+    data: function() {
         return {
-            selfInfo:null,
-            skillInfo:null,
-            workInfo:null,
-            hobbyInfo:null,
-            studyInfo:null,
-            projectsInfo:null
+            selfInfo: null,
+            skillInfo: null,
+            workInfo: null,
+            hobbyInfo: null,
+            studyInfo: null,
+            projectsInfo: null
         }
     },
-    created:function(){
+    created: function() {
         let $this = this;
-        $.getJSON("./js/leftPanelDatas.json", function(json){
+        $.getJSON("./js/leftPanelDatas.json", function(json) {
             let leftPanelData = json;
             $this.selfInfo = leftPanelData.selfInfo;
             $this.skillInfo = leftPanelData.skillInfo;
@@ -59,22 +59,9 @@ var leftPanelApp = new Vue({
     }
 });
 
-
-
 $(document).ready(function() {
-    /*$(".panel-tab-ul li[data-tab]").click(function(){
-    	$(".tabContent").css("display","none");
-    	$("."+$(this).data("tab")).fadeIn("slow");
-    });*/
-
-    // Tools.$imgsArray = $(".my-hobby-ul>li>img");
     if (!Tools.isOldIE) {
-         /*页面初次显示动画*/
+        /*页面初次显示动画*/
         new WOW().init();
-        /*加载兴趣爱好图片*/
-        // Tools.loadingImgs(".svg");
-    } else { 
-        /*IE8 加载兴趣爱好图片*/
-        // Tools.loadingImgs(".png");
     }
 });
