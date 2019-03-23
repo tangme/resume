@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>唐小律</title>
+    <link rel="Shortcut Icon" href="./images/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/device.js/0.2.7/device.min.js"></script>
+    <!--[if lte IE 9]>
+        <script type="text/javascript">
+        var OLD_IE = true;
+        </script>
+    <![endif]-->
+    <script type="text/javascript">
+    (function(window) {
+        if (!device.desktop()) {
+            window.location.href = "mobileIndex.html";
+        }
+
+        function Tools() {
+            this.isOldIE = (typeof window.OLD_IE !== 'undefined') ? true : false;
+            this.$imgsArray;
+        }
+        Tools.prototype = {
+            constructor: Tools,
+            loadingImgs: function(fileSuffixName) {
+                this.$imgsArray.each(function() {
+                    $(this).attr("src", "./images/" + $(this).data("imgsrcname") + fileSuffixName);
+                });
+            }
+        };
+
+        window.Tools = new Tools();
+
+        if (window.Tools.isOldIE) {
+            document.write("<script src=\"https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js\"><\/script>");
+        } else {
+            document.write("<script src=\"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js\"><\/script>");
+            document.write("<script src=\"https://cdn.bootcss.com/wow/1.1.2/wow.min.js\"><\/script>");
+
+        }
+
+    })(window);
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/index.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="./css/oldBrowser.min.css">
+    <![endif]-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body class="commonBG">
+    <div class="myAvatarDiv bounceInUp wow">
+        <img src="http://r.photo.store.qq.com/psb?/V13fiZMP3zFynb/VFRa4u46RcaPu*y0OEu4s0EEDXRy7yuMSbKCAHStF4Q!/r/dFkAAAAAAAAA" alt="./images/avatar.jpg">
+        <p>
+            <span class="my-briefinfo"></span>
+            <span class="my-name">
+                唐 律
+            </span>
+        </p>
+    </div>
+    <div class="top"></div>
+    <div class="container-fluid mainOutDiv commonBG">
+        <div class="row">
+            <!-- 左侧面板 -->
+            <div class="col-xs-3 pdr-zero col-cus-20" id="left-panel-container">
+                <div class="clearfix">
+                    <left-panel v-if="selfInfo" title="个人信息">
+                        <p class="self-info-p" v-for="item in selfInfo"><i :class="item.icon"></i>
+                            <a v-if="item.onlineUrl" :href="item.onlineUrl" target="_blank">{{item.title}}</a>
+                            <template v-else>{{item.title}}</template>
+                        </p>
+                    </left-panel>
+                    <left-panel v-if="skillInfo" title="软件技能">
+                        <div class="progress-div" v-for="item in skillInfo">
+                            <span class="progress-name">{{item.name}}</span>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-info progress-bar-striped active" :style="{width: item.familiarity + '%'}">
+                                    <div class="progress-value">{{item.familiarity}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </left-panel>
+                    <left-panel v-if="hobbyInfo" title="兴趣爱好" :show_default_slot="false">
+                        <template v-slot:sectionone>
+                            <ul class="my-hobby-ul clearfix">
+                                <li v-for="item in hobbyInfo.hobbys"><img :src="item.imgUrl" alt="徒步" :data-imgsrcname="item.name">
+                                    <p>{{item.name}}</p>
+                                </li>
+                            </ul>
+                        </template>
+                        <template v-slot:sectiontwo>
+                            <p class="my-hobby-p" v-for="item in hobbyInfo.whatIDo">
+                                <a :href="item.onlineUrl" v-if="item.onlineUrl" target="_blank">{{item.name}}</a>
+                                <template v-else>{{item.name}}</template>
+                            </p>
+                        </template>
+                    </left-panel>
+                    <left-panel v-if="workInfo" title="工作经历">
+                        <p class="work-study-p" v-for="item in workInfo"><i :class="item.icon"></i> {{item.title}}</p>
+                    </left-panel>
+                    <left-panel v-if="studyInfo" title="学习经历">
+                        <p class="work-study-p" v-for="item in studyInfo"><i :class="item.icon"></i> {{item.name}}</p>
+                    </left-panel>
+                    <left-panel v-if="projectsInfo" title="其它参与项目">
+                        <p class="other-project-p" v-for="item in projectsInfo"><i class="fa fa-angle-right"></i>
+                            <a :href="item.onlineUrl" target="_blank" v-if="item.onlineUrl">{{item.projectName}}</a>
+                            <template v-else>{{item.projectName}}</template>
+                        </p>
+                    </left-panel>
+                </div>
+            </div>
+            <!-- 右侧面板 -->
+            <div class="col-xs-9 col-cus-79">
+                <div class="main">
+                    <hr class="split-line">
+                    <!-- 工作经历 -->
+                    <ul class="cbp_tmtimeline workExp tabContent" id="projectApp">
+                        <li class="slideInRight wow" v-for="item in projectDatas">
+                            <time class="cbp_tmtime" datetime="2013-04-10 18:30">
+                                <span>{{item.projectLiftTime[1]}}</span>
+                                <span>{{item.projectLiftTime[0]}}</span>
+                            </time>
+                            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                            <div class="cbp_tmlabel">
+                                <h2>{{item.projectName}}</h2>
+                                <p class="borderBottom">
+                                    <code v-for="technologyStack in item.technologyStack" class="marginRight5">{{technologyStack}}</code>
+                                </p>
+                                <div class="bs-callout bs-callout-info" id="callout-alerts-dismiss-plugin" v-if="item.dutyAndAchieve && item.dutyAndAchieve.length > 0">
+                                    <a href="http://www.china-cdt.com/" target="_blank" v-if="!!item.projectImages && item.projectImages.length > 0">
+                                        <img :src="item.projectImages[0]" alt="" class="demoImg">
+                                    </a>
+                                    <h4>职责与成果</h4>
+                                    <p v-for="dutyAndAchieve in item.dutyAndAchieve">{{dutyAndAchieve}}</p>
+                                </div>
+                                <ul class="work-info">
+                                    <li v-for="todos in item.todos">{{todos}}</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-div">
+        <p>
+            <i class="fa fa-copyright fa-lg"></i> Designed by tanglv Code by tanglv
+        </p>
+    </div>
+</body>
+
+<script src="./js/index.min.js"></script>
+</html>
