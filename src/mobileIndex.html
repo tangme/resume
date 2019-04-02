@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <div class="container-fluid" id="mobileApp">
+    <div class="container-fluid" id="mobileApp" v-cloak>
         <div class="row">
             <!-- 顶部头像 简介 选项卡 -->
             <div class="topBG-div">
@@ -110,12 +110,27 @@
                             </li>
                         </ul>
                         <p class="my-hobby-p" v-for="item in hobbyInfo.whatIDo">
-                            <a :href="item.onlineUrl" v-if="item.onlineUrl" target="_blank">{{item.name}}</a>
+                            <a :href="item.onlineUrl" v-if="item.onlineUrl" target="_blank">{{item.name}} <i class="fab fa-youtube"></i> </a>
                             <template v-else>{{item.name}}</template>
                         </p>
                     </selfinfoitem-panel>
                     <selfinfoitem-panel v-if="workInfo" title="工作经历">
-                        <p class="work-study-p common-p-style" v-for="item in workInfo"><i :class="item.icon"></i> {{item.title}}</p>
+                        <!-- <p class="work-study-p common-p-style" v-for="item in workInfo"><i :class="item.icon"></i> {{item.title}}</p> -->
+                        <Collapse v-for="item in workInfo">
+                            <p class="work-study-p" >
+                                <i :class="item.icon"></i>
+                                {{item.title}}
+                            </p>
+                            <template v-slot:content>
+                                <p>
+                                    <i class="far fa-calendar-check"></i> {{item.startTime}}
+                                    <i class="far fa-calendar-times"></i> {{item.endTime}}
+                                </p>
+                                <p>
+                                    <i class="fas fa-user-tag"></i> {{item.role}}
+                                </p>
+                            </template>
+                        </Collapse>
                     </selfinfoitem-panel>
                     <selfinfoitem-panel v-if="studyInfo" title="学习经历">
                         <p class="work-study-p common-p-style" v-for="item in studyInfo"><i :class="item.icon"></i> {{item.name}}</p>

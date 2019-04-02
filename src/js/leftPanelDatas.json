@@ -38,10 +38,10 @@
 		]
 	},
 	"workInfo":[
-		{"title":"北京中科威荣计算机技术有限公司","icon":"fa fa-hdd"},
-		{"title":"湖南天骄物流信息科技有限公司","icon":"fa fa-truck"},
-		{"title":"长沙亿泰科技有限公司","icon":"fa fa-sitemap"},
-		{"title":"北京大唐先兴软件技术有限公司","icon":"fa fa-server"}
+		{"title":"北京中科威荣计算机技术有限公司","icon":"fa fa-hdd","startTime":"2018-10","endTime":"2019-03","role":"Web前端开发工程师"},
+		{"title":"湖南天骄物流信息科技有限公司","icon":"fa fa-truck","startTime":"2018-01","endTime":"2018-09","role":"Web前端开发工程师"},
+		{"title":"长沙亿泰科技有限公司","icon":"fa fa-sitemap","startTime":"2012-01","endTime":"2017-09","role":"JAVA软件开发工程师"},
+		{"title":"北京大唐先兴软件技术有限公司","icon":"fa fa-server","startTime":"2015-12","endTime":"2016-03","role":"JAVA软件开发工程师"}
 	],
 	"studyInfo":[
 		{"name":"湖南工程职院","icon":"fa fa-university"},

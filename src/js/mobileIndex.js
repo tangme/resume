@@ -21,6 +21,26 @@ Vue.component('selfinfoitem-panel',{
                 </div>`
 });
 
+Vue.component("Collapse",{
+    data:function(){
+        return {
+            contentShow:false
+        }
+    },
+    template:`
+        <div>
+            <div @click="contentShow = !contentShow" class="collapse-head" :class="{rotate180:contentShow}">
+                <slot></slot>
+            </div>
+            <transition :duration="500" enter-active-class="animated bounceIn" leave-active-class="animated bounceOut">
+                <div v-show="contentShow" class="collapse-content">
+                    <slot name="content"></slot>
+                </div>
+            </transition>
+        </div>
+    `
+});
+
 var selfInfoApp = new Vue({
     el:'#mobileApp',
     data:function(){
